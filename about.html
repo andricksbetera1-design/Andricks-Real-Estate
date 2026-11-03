@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Andricks Real Estate, our values and our commitment to helping you make confident property decisions.">
+  <title>About Us | Andricks Real Estate</title>
+  <style>
+    :root {
+      --navy: #10283f;
+      --navy-2: #173b59;
+      --gold: #c79a52;
+      --cream: #f6f4ef;
+      --ink: #1c2933;
+      --muted: #687681;
+      --white: #fff;
+      --shadow: 0 18px 50px rgba(16,40,63,.12);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--white); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; object-fit: cover; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { background: var(--navy); color: #dce5ec; font-size: .83rem; }
+    .topbar .container { display: flex; justify-content: space-between; gap: 20px; padding: 9px 0; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-bottom: 1px solid #e9edf0; }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.04em; color: var(--navy); font-size: 1.25rem; }
+    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: var(--gold); color: var(--navy); font-family: Georgia, serif; font-size: 1.35rem; }
+    .brand small { display: block; font-size: .62rem; letter-spacing: .19em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+    .links { display: flex; align-items: center; gap: 28px; font-size: .92rem; font-weight: 600; color: #42515d; }
+    .links a:hover { color: var(--gold); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 13px 21px; border-radius: 8px; background: var(--gold); color: var(--navy); font-weight: 800; border: 1px solid var(--gold); transition: .2s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(199,154,82,.25); }
+    .btn.dark { background: var(--navy); border-color: var(--navy); color: white; }
+    .hero { min-height: 650px; display: flex; align-items: center; color: white; background: linear-gradient(90deg, rgba(9,28,45,.88), rgba(9,28,45,.56) 54%, rgba(9,28,45,.12)); }
+    .hero { background-image: linear-gradient(90deg, rgba(9,28,45,.88), rgba(9,28,45,.56) 54%, rgba(9,28,45,.12)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85'); }
+    .hero-content { max-width: 680px; padding: 100px 0; }
+    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: .2em; font-size: .75rem; font-weight: 800; }
+    h1 { font: 500 clamp(2.8rem, 6vw, 5.2rem)/1.04 Georgia, 'Times New Roman', serif; margin: 18px 0; letter-spacing: -.04em; }
+    .hero p { max-width: 550px; color: #e4eaf0; font-size: 1.08rem; margin: 0 0 30px; }
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; }
+    .btn.outline { background: transparent; border-color: rgba(255,255,255,.65); color: white; }
+    .search-wrap { margin-top: -44px; position: relative; z-index: 2; }
+    .search-panel { background: white; border-radius: 14px; box-shadow: var(--shadow); padding: 22px; display: grid; grid-template-columns: 1.5fr 1fr 1fr auto; gap: 14px; align-items: end; }
+    label { display: block; color: var(--muted); font-size: .75rem; font-weight: 800; margin-bottom: 7px; text-transform: uppercase; letter-spacing: .08em; }
+    input, select, textarea { width: 100%; padding: 13px 14px; border: 1px solid #dce2e6; border-radius: 7px; background: white; color: var(--ink); font: inherit; outline: none; }
+    input:focus, select:focus, textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(199,154,82,.14); }
+    section { padding: 92px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 34px; }
+    h2 { font: 500 clamp(2rem, 4vw, 3rem)/1.1 Georgia, serif; color: var(--navy); margin: 9px 0 0; letter-spacing: -.035em; }
+    .section-head p { max-width: 440px; color: var(--muted); margin: 0; }
+    .property-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .property { border: 1px solid #e8ecef; border-radius: var(--radius); overflow: hidden; background: white; transition: .25s; }
+    .property:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .property-image { height: 235px; position: relative; }
+    .tag { position: absolute; left: 16px; top: 16px; padding: 7px 11px; border-radius: 5px; background: var(--gold); color: var(--navy); font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .property-body { padding: 21px; }
+    .price { color: var(--navy); font-size: 1.3rem; font-weight: 800; }
+    .property h3 { margin: 7px 0 4px; color: var(--navy); font-size: 1.1rem; }
+    .location { color: var(--muted); font-size: .9rem; }
+    .features { display: flex; gap: 17px; padding-top: 17px; margin-top: 17px; border-top: 1px solid #edf0f2; color: #53616b; font-size: .82rem; }
+    .about { background: var(--cream); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .about-image { min-height: 470px; border-radius: var(--radius); background: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85') center/cover; box-shadow: var(--shadow); }
+    .about-copy p { color: var(--muted); margin: 20px 0; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 30px; }
+    .stat strong { display: block; font: 2rem Georgia, serif; color: var(--navy); }
+    .stat span { color: var(--muted); font-size: .8rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .service { padding: 29px; border: 1px solid #e8ecef; border-radius: var(--radius); }
+    .service-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: #f4ead9; color: var(--navy); font-size: 1.35rem; }
+    .service h3 { color: var(--navy); margin: 18px 0 8px; }
+    .service p { color: var(--muted); font-size: .93rem; margin: 0; }
+    .cta { background: var(--navy); color: white; text-align: center; padding: 76px 20px; }
+    .cta h2 { color: white; }
+    .cta p { color: #c9d5df; max-width: 580px; margin: 18px auto 27px; }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 60px; }
+    .contact-info p { color: var(--muted); }
+    .contact-detail { margin: 23px 0; }
+    .contact-detail strong { display: block; color: var(--navy); }
+    .contact-form { padding: 28px; border: 1px solid #e8ecef; border-radius: var(--radius); box-shadow: 0 10px 35px rgba(16,40,63,.06); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field { margin-bottom: 16px; }
+    textarea { min-height: 125px; resize: vertical; }
+    footer { background: #0b1e30; color: #d1dbe3; padding: 27px 0; font-size: .84rem; }
+    footer .container { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    footer a { color: var(--gold); }
+    @media (max-width: 850px) {
+      .links { display: none; }
+      .search-panel { grid-template-columns: 1fr 1fr; }
+      .property-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 35px; }
+      .about-image { min-height: 350px; }
+    }
+    @media (max-width: 560px) {
+      .topbar .container { justify-content: center; text-align: center; }
+      .topbar .container span:last-child { display: none; }
+      .nav { min-height: 68px; }
+      .nav > .btn { padding: 10px 13px; font-size: .82rem; }
+      .hero { min-height: 570px; }
+      .hero-content { padding: 75px 0; }
+      .search-panel, .property-grid, .services-grid, .form-row { grid-template-columns: 1fr; }
+      .search-wrap { margin-top: -25px; }
+      section { padding: 68px 0; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+      .stats { gap: 10px; }
+      .stat strong { font-size: 1.6rem; }
+    }
+  
+    .page-hero { padding: 95px 0 105px; color: white; background: linear-gradient(90deg, rgba(9,28,45,.88), rgba(9,28,45,.48)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85') center/cover; }
+    .page-hero h1 { max-width: 760px; }
+    .breadcrumb { color: #dce5ec; font-size: .9rem; }
+    .story-grid, .values-grid, .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; }
+    .story-image { min-height: 480px; border-radius: var(--radius); background: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85') center/cover; box-shadow: var(--shadow); }
+    .copy p { color: var(--muted); margin: 18px 0; }
+    .values { background: var(--cream); }
+    .values-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .value-card { background: white; padding: 27px; border-radius: var(--radius); border: 1px solid #e8ecef; }
+    .value-card h3 { color: var(--navy); margin: 15px 0 8px; }
+    .value-card p { color: var(--muted); font-size: .93rem; margin: 0; }
+    .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .mission-card { padding: 34px; border-radius: var(--radius); background: var(--navy); color: white; }
+    .mission-card.light { background: var(--cream); color: var(--ink); }
+    .mission-card h3 { font: 500 1.8rem Georgia, serif; margin: 0 0 12px; }
+    .mission-card p { margin: 0; color: #d1dbe3; }
+    .mission-card.light p { color: var(--muted); }
+    @media (max-width: 850px) { .story-grid, .mission-grid { grid-template-columns: 1fr; gap: 32px; } .values-grid { grid-template-columns: repeat(2, 1fr); } .story-image { min-height: 360px; } }
+    @media (max-width: 560px) { .page-hero { padding: 70px 0 78px; } .values-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Thoughtful property advice. Confident decisions.</span>
+      <span>Call us: <strong>+675 XXX XXX</strong> &nbsp; | &nbsp; Email: hello@andricksrealestate.com</span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">A</span>
+        <span>ANDRICKS<small>REAL ESTATE</small></span>
+      </a>
+      <div class="links">
+        <a href="index.html">Home</a><a href="properties.html">Properties</a><a href="about.html" aria-current="page">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a>
+      </div>
+      <a class="btn" href="contact.html">Get in touch</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> &nbsp; / &nbsp; About Us</div>
+        <div class="eyebrow" style="margin-top:22px">Get to know us</div>
+        <h1>People first.<br>Property always.</h1>
+        <p style="max-width:620px;color:#e4eaf0;font-size:1.08rem">At Andricks Real Estate, we believe finding, selling or investing in property should feel clear, considered and rewarding.</p>
+        <a class="btn" href="contact.html">Start a conversation</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="container story-grid">
+        <div class="story-image" role="img" aria-label="Bright, elegant modern home interior"></div>
+        <div class="copy">
+          <div class="eyebrow">Our story</div>
+          <h2>Property is more than a transaction.</h2>
+          <p>It is where people build their lives, grow their businesses and plan for the future. That is why Andricks Real Estate is committed to making every property experience personal, professional and straightforward.</p>
+          <p>Whether you are taking your first step into the property market, moving on to a new home, selling land or considering an investment, we take the time to understand your priorities and help you explore your options.</p>
+          <p>Our approach is built on attentive service, honest communication and respect for the decisions our clients make.</p>
+          <a class="btn dark" href="services.html">Explore our services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="values">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="eyebrow">What guides us</div><h2>Our core values</h2></div>
+          <p>The principles behind the way we work and the relationships we build.</p>
+        </div>
+        <div class="values-grid">
+          <article class="value-card"><div class="service-icon">◇</div><h3>Integrity</h3><p>We believe in honest advice, clear expectations and doing business the right way.</p></article>
+          <article class="value-card"><div class="service-icon">♡</div><h3>Client care</h3><p>We listen first, understand your needs and treat every property journey with care.</p></article>
+          <article class="value-card"><div class="service-icon">✦</div><h3>Professionalism</h3><p>We aim to deliver a dependable, organised and respectful experience at every stage.</p></article>
+          <article class="value-card"><div class="service-icon">⌖</div><h3>Local understanding</h3><p>We value local knowledge and the details that matter in each property decision.</p></article>
+          <article class="value-card"><div class="service-icon">↗</div><h3>Progress</h3><p>We look for practical solutions that help clients move confidently towards their goals.</p></article>
+          <article class="value-card"><div class="service-icon">◎</div><h3>Relationships</h3><p>We want to build lasting connections, not simply complete a single transaction.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div><div class="eyebrow">Our purpose</div><h2>What we stand for</h2></div>
+          <p>A clear purpose and a long-term commitment to the people we serve.</p>
+        </div>
+        <div class="mission-grid">
+          <article class="mission-card">
+            <h3>Our mission</h3>
+            <p>To provide thoughtful, reliable real estate guidance and a positive client experience through clear communication, personal service and a commitment to our clients' property goals.</p>
+          </article>
+          <article class="mission-card light">
+            <h3>Our vision</h3>
+            <p>To become a trusted real estate name known for professionalism, strong relationships and helping individuals, families and businesses make confident property decisions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container story-grid">
+        <div class="copy">
+          <div class="eyebrow">The Andricks difference</div>
+          <h2>A more personal way to move forward.</h2>
+          <p>Choosing a real estate partner is an important decision. We want you to feel informed, heard and supported from your first enquiry through to your next chapter.</p>
+          <p>We focus on understanding your goals, explaining the process and keeping communication open, so you can make decisions with greater confidence.</p>
+          <a class="btn dark" href="contact.html">Talk to Andricks Real Estate</a>
+        </div>
+        <div class="story-image" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85')" role="img" aria-label="Modern home exterior"></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="eyebrow">Your property journey starts here</div>
+      <h2>Let's take the next step together.</h2>
+      <p>Whether you are buying, selling, renting or exploring an investment, we'd be glad to hear what matters to you.</p>
+      <a class="btn" href="contact.html">Contact Andricks Real Estate</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© <span id="year"></span> Andricks Real Estate. All rights reserved.</span>
+      <span>Property with purpose. Service with care.</span>
+      <span><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a></span>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
